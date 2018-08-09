@@ -16,6 +16,23 @@ extension ViewController {
         let scene = SCNScene(named: "art.scnassets/\(name)/\(name).scn")
         guard let model = scene?.rootNode.childNode(withName: "SketchUp", recursively: false) else { return nil }
         model.name = name
+        
+        var scale : CGFloat
+        
+        switch name {
+        case "iPhoneX":          scale = 0.025
+        case "iPhone6s":         scale = 0.025
+        case "iPhone7":          scale = 0.0001
+        case "iPhone8":          scale = 0.000008
+        case "iPhone8Plus":      scale = 0.000008
+        case "iPad4":            scale = 0.00054
+        case "MacbookPro13":     scale = 0.0022
+        case "iMacPro":          scale = 0.0245
+        case "AppleWatch":       scale = 0.0000038
+        default:                 scale = 1
+        }
+        
+        model.scale = SCNVector3(scale, scale, scale)
         return model
     }
     
@@ -36,5 +53,8 @@ extension ViewController {
         
         sceneView.scene.rootNode.addChildNode(model)
         print(")\(modelName) added successfully.")
+        
+        modelsInTheScene.append(model)
+        print("Currently have \(modelsInTheScene.count) models in the scene")
     }
 }

@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     var focusSquare : FocusSquare?
     var screenCenter : CGPoint!
     
+    var modelsInTheScene : Array<SCNNode> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -64,6 +66,20 @@ class ViewController: UIViewController {
     
     func updateFocusSquare() {
         guard let focusSquareLocal = focusSquare else { return }
+        
+        guard let pointOfView = sceneView.pointOfView else { return }
+        
+        let firstVisibleModel = modelsInTheScene.first { (node) -> Bool in
+            return sceneView.isNode(node, insideFrustumOf: pointOfView) // returns first SCNNode that is visible from the point of view
+        }
+        
+        let modelsAreVisible = firstVisibleModel != nil
+        
+        if modelsAreVisible {
+            focusSquareLocal.setHidden(to: true)
+        } else {
+            focusSquareLocal.setHidden(to: false)
+        }
         
         let hitTest = sceneView.hitTest(screenCenter, types: .existingPlaneUsingExtent) // depends on size of flat surface.
         if let hitTestResult = hitTest.first {
