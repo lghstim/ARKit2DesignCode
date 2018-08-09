@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.3.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="DesignCodeARKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qKY-8e-kNz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QnR-LZ-0cl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jy-ch-zNr">
+                                <rect key="frame" x="162.5" y="597" width="50" height="50"/>
+                                <state key="normal" image="Button/add"/>
+                                <connections>
+                                    <action selector="addObjectButtonTapped:" destination="BV1-FR-VrT" eventType="touchUpInside" id="97n-V6-Yke"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QnR-LZ-0cl" secondAttribute="trailing" id="0TX-5Y-cTA"/>
+                            <constraint firstItem="QnR-LZ-0cl" firstAttribute="leading" secondItem="qKY-8e-kNz" secondAttribute="leading" id="4fs-8T-MgY"/>
+                            <constraint firstAttribute="bottom" secondItem="QnR-LZ-0cl" secondAttribute="bottom" id="MA5-7J-gUg"/>
+                            <constraint firstItem="8Jy-ch-zNr" firstAttribute="centerX" secondItem="qKY-8e-kNz" secondAttribute="centerX" id="NLu-Wf-Bao"/>
+                            <constraint firstItem="QnR-LZ-0cl" firstAttribute="leading" secondItem="qKY-8e-kNz" secondAttribute="leading" id="NWc-s3-pmm"/>
+                            <constraint firstAttribute="bottom" secondItem="QnR-LZ-0cl" secondAttribute="bottom" id="NjD-ea-mwO"/>
+                            <constraint firstItem="5uG-1C-kK3" firstAttribute="bottom" secondItem="8Jy-ch-zNr" secondAttribute="bottom" constant="20" id="e43-KR-RNx"/>
+                            <constraint firstItem="QnR-LZ-0cl" firstAttribute="top" secondItem="qKY-8e-kNz" secondAttribute="top" id="g2a-4w-HKR"/>
+                            <constraint firstItem="QnR-LZ-0cl" firstAttribute="top" secondItem="qKY-8e-kNz" secondAttribute="top" id="w6j-k5-0Av"/>
+                            <constraint firstItem="QnR-LZ-0cl" firstAttribute="trailing" secondItem="5uG-1C-kK3" secondAttribute="trailing" id="yb0-6l-vOs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5uG-1C-kK3"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="QnR-LZ-0cl" id="rKf-48-1Xl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Button/add" width="50" height="50"/>
+    </resources>
+</document>
